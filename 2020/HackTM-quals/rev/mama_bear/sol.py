@@ -6,7 +6,7 @@ with open("mama_bear", "rb") as f:
 
 opcodes = e[0x15A1:0x1B93]
 
-def tokenzier(opcodes: str):
+def tokenizer(opcodes: str):
     res = []
     opcodes = deque(opcodes)
     while opcodes:
@@ -60,7 +60,7 @@ def go(opcode, pw):
 
 ops = []
 for opcode in opcodes.split(b'!')[1:-1]:
-    ops.append(tokenzier((opcode + b'!').decode()))
+    ops.append(tokenizer((opcode + b'!').decode()))
 
 s = Solver()
 
